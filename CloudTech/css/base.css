@@ -111,3 +111,5 @@ form{display:grid;gap:1rem;max-width:720px}
   .site-nav ul{gap:.5rem;flex-wrap:wrap}
   .site-nav a{padding:.4rem .6rem}
 }
+/* More breathing room in header */
+header .container { padding-block: .75rem; }
