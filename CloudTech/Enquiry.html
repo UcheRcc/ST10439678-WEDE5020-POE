@@ -24,25 +24,44 @@
   </header>
 
   <main class="container">
-    <h1>Enquiry / Pre-Order</h1>
+    <!-- Section: enquiry form (Part 1, HTML only) -->
 
-    <!-- Client-side validation (required + email pattern) -->
-    <form action="#" method="post" aria-describedby="privacy-note">
-      <div class="grid">
-        <label>Full Name*<input required name="name" type="text" /></label>
-        <label>Email*<input required name="email" type="email" /></label>
-        <label>Phone<input name="phone" type="tel" placeholder="+27…" /></label>
-        <label>Product<input name="product" type="text" placeholder="e.g., CloudPhone X" /></label>
-      </div>
-      <label>Message<textarea name="message" rows="5"></textarea></label>
-      <p id="privacy-note" class="hint">We’ll use your details only to respond to this request.</p>
-      <button class="btn" type="submit">Send</button>
-      <a class="btn outline" href="https://wa.me/0000000000" target="_blank" rel="noopener">WhatsApp</a>
-    </form>
+  <h1>Enquiry / Pre-Order</h1>
 
-    <!-- Comment for marker: This form will get JS validation in Part 3 -->
-    <!-- Source: MDN Forms Guide (accessed today) -->
-  </main>
+<form action="mailto:support@cloudtech.co.za" method="post">
+  <!-- Your details -->
+  <label for="fullName">Full Name*</label>
+  <input id="fullName" name="name" type="text" autocomplete="name" required />
+
+  <label for="email">Email*</label>
+  <input id="email" name="email" type="email" autocomplete="email" required />
+
+  <label for="phone">Phone (optional)</label>
+  <input id="phone" name="phone" type="tel" inputmode="tel" placeholder="+27…" />
+
+  <!-- Product -->
+  <label for="product">Product*</label>
+  <input id="product" name="product" type="text" placeholder="e.g., CloudPhone X" required />
+
+  <label for="message">Message*</label>
+  <textarea id="message" name="message" rows="6" placeholder="Tell us what you need" required></textarea>
+
+  <label><input type="checkbox" name="consent" required /> I agree to be contacted about this enquiry.*</label>
+
+  <div class="actions" style="display:flex;gap:.75rem;flex-wrap:wrap">
+    <button class="btn" type="submit">Send</button>
+
+    <!-- WhatsApp quick message (replace 27XXXXXXXXX with your number) -->
+    <a class="btn outline"
+       href="https://wa.me/27XXXXXXXXX?text=Hi%20CloudTech%2C%20I%27d%20like%20to%20enquire%20about%20[Product]."
+       target="_blank" rel="noopener">WhatsApp</a>
+  </div>
+
+  <p class="muted">We’ll use your details only to respond to this request. * Required fields.</p>
+</form>
+
+<!-- Section: turn-around time -->
+<p class="muted">We reply within 1–2 business days.</p>
 
   <footer><div class="container"><p>&copy; <span data-year></span> CloudTech</p></div></footer>
   <script src="javascript/main.js"></script>
