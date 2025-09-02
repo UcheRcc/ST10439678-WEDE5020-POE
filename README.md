@@ -37,8 +37,7 @@ Build a five-page static website (Home, About, Products, Enquiry, Contact) with 
     enquiry_wireframe.png
     contact_wireframe.png
 README.md
-robots.txt
-sitemap.xml
+
 Home.html  About.html  Products.html  Enquiry.html  Contact.html
 
 
