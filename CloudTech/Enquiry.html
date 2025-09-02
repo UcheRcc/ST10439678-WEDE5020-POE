@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Enquiry – CloudTech</title>
+  <meta name="description" content="Contact CloudTech to enquire or pre-order a product." />
+  <link rel="stylesheet" href="css/base.css" />
+</head>
+<body>
+  <header>
+    <div class="container">
+      <a class="logo" href="Home.html" style="font-weight:800;text-decoration:none;color:#0f172a">CloudTech</a>
+      <nav aria-label="Main">
+        <ul>
+          <li><a href="Home.html">Home</a></li>
+          <li><a href="About.html">About</a></li>
+          <li><a href="Products.html">Products</a></li>
+          <li><a href="Enquiry.html" aria-current="page">Enquiry</a></li>
+          <li><a href="Contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>Enquiry / Pre-Order</h1>
+
+    <!-- Client-side validation (required + email pattern) -->
+    <form action="#" method="post" aria-describedby="privacy-note">
+      <div class="grid">
+        <label>Full Name*<input required name="name" type="text" /></label>
+        <label>Email*<input required name="email" type="email" /></label>
+        <label>Phone<input name="phone" type="tel" placeholder="+27…" /></label>
+        <label>Product<input name="product" type="text" placeholder="e.g., CloudPhone X" /></label>
+      </div>
+      <label>Message<textarea name="message" rows="5"></textarea></label>
+      <p id="privacy-note" class="hint">We’ll use your details only to respond to this request.</p>
+      <button class="btn" type="submit">Send</button>
+      <a class="btn outline" href="https://wa.me/0000000000" target="_blank" rel="noopener">WhatsApp</a>
+    </form>
+
+    <!-- Comment for marker: This form will get JS validation in Part 3 -->
+    <!-- Source: MDN Forms Guide (accessed today) -->
+  </main>
+
+  <footer><div class="container"><p>&copy; <span data-year></span> CloudTech</p></div></footer>
+  <script src="javascript/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+:root{
+  --accent:#2563eb;
+  --muted:#64748b;
+  --border:#e2e8f0;
+  --bg:#fff;
+  --fg:#0f172a;
+}
+
+/* Reset / base */
+*{box-sizing:border-box}
+html,body{margin:0}
+body{
+  font-family:system-ui,Inter,Segoe UI,Arial,sans-serif;
+  line-height:1.6;
+  background:var(--bg);
+  color:var(--fg);
+}
+img{max-width:100%;height:auto;display:block} /* <-- global image sanity */
+
+/* Layout */
+.container{max-width:1080px;margin:0 auto;padding:1rem}
+header,footer{background:#f1f5f9;border-block:1px solid var(--border)}
+h1{margin:.25rem 0 .5rem}
+.muted{color:var(--muted)}
+
+/* Nav */
+nav ul{list-style:none;display:flex;gap:1rem;margin:0;padding:0}
+nav a{color:var(--fg);text-decoration:none;padding:.5rem .75rem;border-radius:.5rem}
+nav a[aria-current="page"],nav a:hover{background:#e2e8f0}
+
+/* Grid */
+.grid{display:grid;gap:1rem}
+.grid.cards{grid-template-columns:repeat(auto-fill,minmax(220px,1fr))}
+
+/* Cards */
+.card{
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:1rem;
+  background:#fff;
+  display:flex;                /* make content stack nicely */
+  flex-direction:column;
+  gap:.5rem;
+}
+
+/* ✅ Consistent, good-looking product images */
+.card img{
+  aspect-ratio:4/3;            /* same shape for all thumbs */
+  object-fit:contain;          /* no weird cropping on phones/laptops */
+  background:#f8fafc;          /* soft backdrop for white images */
+  border-radius:8px;
+  padding:.5rem;
+}
+
+/* Buttons */
+.btn{
+  display:inline-block;
+  background:var(--accent);
+  color:#fff;
+  padding:.6rem 1rem;
+  border-radius:.5rem;
+  text-decoration:none;
+}
+.btn.outline{
+  background:transparent;
+  color:var(--accent);
+  border:1px solid var(--accent);
+}
+
+/* Forms */
+label{display:flex;flex-direction:column;gap:.25rem}
+input,textarea{
+  padding:.6rem;
+  border:1px solid #cbd5e1;
+  border-radius:.5rem;
+  font:inherit;
+}
+input:focus,textarea:focus{outline:2px solid var(--accent);outline-offset:2px}
