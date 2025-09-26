@@ -7,8 +7,9 @@
   <link rel="icon" href="Images/favicon.svg" type="image/svg+xml">
 <meta name="theme-color" content="#2563eb">
 
-  <meta name="description" content="Browse CloudTech products: phones, laptops and accessories." />
-  <link rel="stylesheet" href="css/base.css" />
+  <meta name="description" content="Browse CloudTech products: phones, laptops and accessories.">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 <header>
@@ -18,18 +19,20 @@
       <span class="brand-name">CloudTech</span>
     </a>
 
-    <nav class="site-nav" aria-label="Main">
+    <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">Menu</button>
+
+    <nav class="site-nav" id="primary-nav" aria-label="Main">
       <ul>
         <li><a href="Home.html">Home</a></li>
-<li><a href="About.html">About</a></li>
-<li><a href="Products.html" aria-current="page">Products</a></li>
-<li><a href="Enquiry.html">Enquiry</a></li>
-<li><a href="Contact.html">Contact</a></li>
-
+        <li><a href="About.html">About</a></li>
+        <li><a href="Products.html" aria-current="page">Products</a></li>
+        <li><a href="Enquiry.html">Enquiry</a></li>
+        <li><a href="Contact.html">Contact</a></li>
       </ul>
     </nav>
   </div>
 </header>
+
 
 
   <main class="container">
@@ -37,21 +40,36 @@
     <!-- Example static cards for Part 1; replace images/titles as needed -->
     <div class="grid cards">
       <article class="card">
-        <img src="Images/iphone_15_plus_black_pdp_image_position-1__wwen_5.jpg" alt="iPhone 15 Plus in black, front and back" />
+        <img class="resp-thumb"
+              src="Images/iphone_15_plus_black_pdp_image_position-1__wwen_5.jpg"
+              alt="iPhone 15 Plus in black, front and back"
+              width="1280" height="960"
+              sizes="(min-width:1024px) 33vw, (min-width:768px) 45vw, 100vw"
+              loading="lazy" decoding="async" />
         <h2>CloudPhone X</h2>
         <p class="muted">6.1″ OLED • 128 GB • 5G</p>
         <a class="btn" href="Enquiry.html">Enquire</a>
       </article>
 
       <article class="card">
-        <img src="Images/macbook_air_13_in_m3_midnight_pdp_image_position_1__wwen_1_1_1.jpg" alt="MacBook Air 13-inch in midnight" />
+        <img class="resp-thumb"
+              src="Images/macbook_air_13_in_m3_midnight_pdp_image_position_1__wwen_1_1_1.jpg"
+              alt="MacBook Air 13-inch in midnight"
+              width="1280" height="960"
+              sizes="(min-width:1024px) 33vw, (min-width:768px) 45vw, 100vw"
+              loading="lazy" decoding="async" />
         <h2>CloudBook Air 13</h2>
         <p class="muted">13.3″ • 16 GB • 512 GB SSD</p>
         <a class="btn" href="Enquiry.html">Enquire</a>
       </article>
 
       <article class="card">
-        <img src="Images/01.ls_jbl_junior_320bt_product_image_hero_blue_1_1_1.jpg" alt="JBL Junior 320BT wireless headphones in blue" />
+        <img class="resp-thumb"
+     src="Images/01.ls_jbl_junior_320bt_product_image_hero_blue_1_1_1.jpg"
+     alt="JBL Junior 320BT wireless headphones in blue"
+     width="1280" height="960"
+     sizes="(min-width:1024px) 33vw, (min-width:768px) 45vw, 100vw"
+     loading="lazy" decoding="async" />
         <h2>CloudBuds Pro</h2>
         <p class="muted">ANC • 24h playtime</p>
         <a class="btn" href="Enquiry.html">Enquire</a>

@@ -1,0 +1,123 @@
+/* style.css — Part 2: desktop styling + pseudo-classes + responsive */
+
+/* ---------- Typography scale & spacing ---------- */
+:root{
+  --fs-300: clamp(0.95rem, 0.85rem + 0.5vw, 1.05rem);
+  --fs-400: clamp(1.00rem, 0.9rem + 0.8vw, 1.125rem);
+  --fs-500: clamp(1.125rem, 1rem + 1.2vw, 1.375rem);
+  --fs-600: clamp(1.35rem, 1.1rem + 2vw, 1.75rem);
+  --fs-700: clamp(1.65rem, 1.2rem + 3vw, 2.25rem);
+
+  --s-1:.25rem; --s-2:.5rem; --s-3:.75rem; --s-4:1rem;
+  --s-5:1.5rem; --s-6:2rem; --s-7:3rem;
+}
+
+/* Headings & text (consistent, readable) */
+h1{font-size:var(--fs-700); line-height:1.15; margin:0 0 var(--s-3)}
+h2{font-size:var(--fs-600); line-height:1.2; margin:0 0 var(--s-3)}
+h3{font-size:var(--fs-500); line-height:1.25; margin:0 0 var(--s-2)}
+p, li {font-size:var(--fs-400)}
+small{font-size:var(--fs-300); color:var(--muted)}
+
+/* ---------- Layout structure (desktop first, content-led) ---------- */
+.headerbar{padding-block: .85rem}
+.hero{padding-block: var(--s-7)}
+.hero p{max-width: 65ch}
+
+.cards .card{transition: box-shadow .2s ease, transform .2s ease}
+
+/* ---------- Visual decoration & colour ---------- */
+.card:hover{ box-shadow: 0 8px 26px rgba(2,6,23,.08); transform: translateY(-2px) }
+.card:focus-within{ box-shadow: 0 0 0 3px color-mix(in oklab, var(--accent) 30%, white) }
+
+/* ---------- Pseudo-classes on interactive elements ---------- */
+a:focus-visible,
+.button-like:focus-visible,
+.btn:focus-visible,
+input:focus-visible,
+textarea:focus-visible{
+  outline: 3px solid color-mix(in oklab, var(--accent) 75%, white);
+  outline-offset: 2px;
+}
+
+.btn:hover{ filter: brightness(0.95) }
+.btn:active{ transform: translateY(1px) }
+
+nav a:hover,
+nav a:focus-visible{ background:#e2e8f0 }
+nav a:active{ outline: 2px dashed var(--accent); outline-offset: 2px }
+
+input:required:invalid{ border-color:#ef4444 }
+input:valid{ border-color:#22c55e }
+
+/* ---------- Responsive images helpers (CSS side) ---------- */
+img.resp-thumb{
+  aspect-ratio: 4/3; object-fit: cover; border-radius: 10px; background:#f8fafc;
+}
+
+/* ---------- Navigation: small-screen toggle ---------- */
+/* HTML will add a .nav-toggle button; JS toggles .open on .site-nav */
+.nav-toggle{
+  display:none;
+  border:1px solid var(--border);
+  background:#fff;
+  padding:.45rem .65rem;
+  border-radius:.5rem;
+}
+@media (max-width: 768px){
+  .nav-toggle{ display:inline-block; }
+  .site-nav{ position: relative; }
+  .site-nav ul{
+    display:none;
+    position:absolute;
+    right:0; top: calc(100% + .5rem);
+    background:#fff; border:1px solid var(--border);
+    border-radius: .75rem; padding:.5rem; min-width: 220px;
+    box-shadow: 0 10px 30px rgba(2,6,23,.08);
+    flex-direction: column; gap:.25rem;
+  }
+  .site-nav.open ul{ display:flex; }
+  .site-nav a{ display:block; padding:.6rem .75rem; border-radius:.5rem; }
+}
+
+/* ---------- Breakpoints (tablet & mobile) ---------- */
+/* Tablet: 768–1023 */
+@media (max-width: 1024px){
+  .grid.cards{ grid-template-columns: repeat(auto-fill,minmax(240px,1fr)); }
+  .hero{ padding-block: calc(var(--s-7) * .8) }
+}
+
+/* Mobile: <= 480–600 */
+@media (max-width: 600px){
+  .container{ padding-inline: .75rem }
+  .hero{ padding-block: var(--s-6) }
+  .grid.cards{ grid-template-columns: 1fr; }
+  .card{ padding: .75rem }
+  h1{ font-size: var(--fs-600) }
+  h2{ font-size: var(--fs-500) }
+}
+
+/* === Symmetry fix for product cards === */
+.grid.cards{ align-items: stretch; }      /* make all items same height per row */
+
+.card{
+  display:flex;           /* you already have this, keep it */
+  flex-direction:column;
+  gap:.5rem;
+  height:100%;            /* stretch to grid cell height */
+}
+
+/* reserve consistent space for headings (2 lines) */
+.card h2{
+  line-height:1.2;
+  min-height: calc(1.2em * 2); /* forces two-line box even if one line */
+}
+
+/* keep desc at least one line so spacing is even */
+.card .muted{ min-height: 1.6em; }
+
+/* pin the button to the bottom so all buttons align */
+.card .btn{ margin-top:auto; }
+
+/* image box already good; just reiterate the uniform shape */
+.card img{ aspect-ratio:4/3; object-fit:contain; width:100%; }
