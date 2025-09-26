@@ -1,7 +1,3 @@
-Perfect—here’s your updated README.md that keeps your original structure, acknowledges Part 1, and adds Part 2 (CSS & responsive) requirements. Copy-paste this over the old README.
-
-⸻
-
 
 # ST10439678 — WEDE5020 — PoE (Part 1 & Part 2)
 CloudTech — a fictional SA retailer for curated premium gadgets.
@@ -115,4 +111,3 @@ Include descriptive alt text (e.g., “iPhone 15 Plus in black, front and back�
 If adapting code, cite inline as an HTML comment, e.g.:
 <!-- Source: MDN Flexbox guide (accessed 24 Sep 2025) -->
 
-If you want, I can append a one-page marker checklist at the bottom so they can tick off each rubric item.
