@@ -1,4 +1,3 @@
-
 # ST10439678 — WEDE5020 — PoE (Part 1 & Part 2)
 CloudTech — a fictional SA retailer for curated premium gadgets.
 
