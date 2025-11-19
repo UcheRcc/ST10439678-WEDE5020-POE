@@ -57,13 +57,13 @@ function initLightbox() {
   const captionEl = overlay.querySelector("[data-lightbox-caption]");
   const closeEls = overlay.querySelectorAll("[data-lightbox-close]");
 
-  const closeLightbox = () => {
+  function closeLightbox() {
     overlay.classList.remove("is-open");
     overlay.hidden = true;
     document.body.classList.remove("no-scroll");
-  };
+  }
 
-  const openLightbox = (src, alt, caption) => {
+  function openLightbox(src, alt, caption) {
     if (imgEl) {
       imgEl.src = src;
       imgEl.alt = alt || "";
@@ -74,7 +74,7 @@ function initLightbox() {
     overlay.hidden = false;
     overlay.classList.add("is-open");
     document.body.classList.add("no-scroll");
-  };
+  }
 
   triggers.forEach((thumb) => {
     thumb.addEventListener("click", () => {
@@ -180,7 +180,6 @@ function getFieldError(field) {
   }
 
   if (field.type === "email" && value !== "") {
-    // Very simple email check, good enough for client-side validation in this context.
     const emailPattern = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
     if (!emailPattern.test(value)) {
       return "Please enter a valid email address.";
@@ -216,7 +215,6 @@ function submitFormAJAX(form) {
     payload[key] = value;
   });
 
-  // Placeholder URL for academic purposes; in production this would be a real endpoint.
   fetch("https://example.com/api/contact", {
     method: "POST",
     headers: {
@@ -230,8 +228,6 @@ function submitFormAJAX(form) {
           "Thank you. Your message has been received.";
       }
       form.reset();
-
-      // Clear any validation styles after successful submission
       form
         .querySelectorAll("[data-validate]")
         .forEach((field) => {

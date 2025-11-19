@@ -5,14 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Enquiry – CloudTech</title>
   <link rel="icon" href="Images/favicon.svg" type="image/svg+xml">
-<meta name="theme-color" content="#2563eb">
-
+  <meta name="theme-color" content="#2563eb">
   <meta name="description" content="Contact CloudTech to enquire or pre-order a product.">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
- <header>
+<header>
   <div class="container headerbar">
     <a class="brand" href="Home.html" aria-label="CloudTech home">
       <img class="brand-mark" src="Images/cloudtech-mark.svg" alt="" aria-hidden="true">
@@ -33,49 +32,57 @@
   </div>
 </header>
 
-
-
-  <main class="container">
-    <!-- Section: enquiry form (Part 1, HTML only) -->
-
+<main class="container">
   <h1>Enquiry / Pre-Order</h1>
 
-<form action="mailto:support@cloudtech.co.za" method="post">
-  <!-- Your details -->
-  <label for="fullName">Full Name*</label>
-  <input id="fullName" name="name" type="text" autocomplete="name" required />
+  <form id="enquiryForm" data-validate-form novalidate>
+    <!-- Your details -->
+    <label for="fullName">Full Name*</label>
+    <input id="fullName" name="name" type="text" autocomplete="name" required data-validate>
+    <small class="field-error" data-error-for="fullName"></small>
 
-  <label for="email">Email*</label>
-  <input id="email" name="email" type="email" autocomplete="email" required />
+    <label for="email">Email*</label>
+    <input id="email" name="email" type="email" autocomplete="email" required data-validate>
+    <small class="field-error" data-error-for="email"></small>
 
-  <label for="phone">Phone (optional)</label>
-  <input id="phone" name="phone" type="tel" inputmode="tel" placeholder="+27…" />
+    <label for="phone">Phone (optional)</label>
+    <input id="phone" name="phone" type="tel" inputmode="tel" placeholder="+27…" data-validate>
+    <small class="field-error" data-error-for="phone"></small>
 
-  <!-- Product -->
-  <label for="product">Product*</label>
-  <input id="product" name="product" type="text" placeholder="e.g., CloudPhone X" required />
+    <!-- Product -->
+    <label for="product">Product*</label>
+    <input id="product" name="product" type="text" placeholder="e.g., CloudPhone X" required data-validate minlength="2">
+    <small class="field-error" data-error-for="product"></small>
 
-  <label for="message">Message*</label>
-  <textarea id="message" name="message" rows="6" placeholder="Tell us what you need" required></textarea>
+    <label for="message">Message*</label>
+    <textarea id="message" name="message" rows="6" placeholder="Tell us what you need" required data-validate minlength="10"></textarea>
+    <small class="field-error" data-error-for="message"></small>
 
-  <label><input type="checkbox" name="consent" required /> I agree to be contacted about this enquiry.*</label>
+    <label>
+      <input type="checkbox" name="consent" required data-validate>
+      I agree to be contacted about this enquiry.*
+    </label>
+    <small class="field-error" data-error-for="consent"></small>
 
-  <div class="actions" style="display:flex;gap:.75rem;flex-wrap:wrap">
-    <button class="btn" type="submit">Send</button>
+    <div class="actions" style="display:flex;gap:.75rem;flex-wrap:wrap">
+      <button class="btn" type="submit">Send</button>
 
-    <!-- WhatsApp quick message (replace 27XXXXXXXXX with your number) -->
-    <a class="btn outline"
-       href="https://wa.me/27613815929?text=Hi%20CloudTech%2C%20I%27d%20like%20to%20enquire%20about%20[Product]."
-       target="_blank" rel="noopener">WhatsApp</a>
-  </div>
+      <!-- WhatsApp quick message -->
+      <a class="btn outline"
+         href="https://wa.me/27613815929?text=Hi%20CloudTech%2C%20I%27d%20like%20to%20enquire%20about%20[Product]."
+         target="_blank" rel="noopener">WhatsApp</a>
+    </div>
 
-  <p class="muted">We’ll use your details only to respond to this request. * Required fields.</p>
-</form>
+    <p class="form-feedback" data-form-feedback aria-live="polite"></p>
 
-<!-- Section: turn-around time -->
-<p class="muted">We reply within 1–2 business days.</p>
+    <p class="muted">We’ll use your details only to respond to this request. * Required fields.</p>
+  </form>
 
-  <footer><div class="container"><p>&copy; <span data-year></span> CloudTech</p></div></footer>
-  <script src="javascript/main.js"></script>
+  <p class="muted">We reply within 1–2 business days.</p>
+</main>
+
+<footer><div class="container"><p>&copy; <span data-year></span> CloudTech</p></div></footer>
+<script src="javascript/main.js"></script>
 </body>
-</html>
+</html> 
+

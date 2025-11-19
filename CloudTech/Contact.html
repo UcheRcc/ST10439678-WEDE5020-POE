@@ -5,14 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Contact – CloudTech</title>
   <link rel="icon" href="Images/favicon.svg" type="image/svg+xml">
-<meta name="theme-color" content="#2563eb">
-
-  <meta name="description" content="Contact CloudTech by email or phone. View store locations.">
+  <meta name="theme-color" content="#2563eb">
+  <meta name="description" content="Contact CloudTech by email or phone, or send a message using our contact form. View store locations on the map.">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
- <header>
+<header>
   <div class="container headerbar">
     <a class="brand" href="Home.html" aria-label="CloudTech home">
       <img class="brand-mark" src="Images/cloudtech-mark.svg" alt="" aria-hidden="true">
@@ -33,19 +32,55 @@
   </div>
 </header>
 
+<main class="container">
+  <h1>Contact</h1>
 
+  <p>Email: <a href="mailto:support@cloudtech.co.za">support@cloudtech.co.za</a></p>
+  <p>Phone: <a href="tel:+27613815929">+27 61 381 5929</a></p>
 
-  <main class="container">
-    <h1>Contact</h1>
-    <p>Email: <a href="mailto:support@cloudtech.co.za">support@cloudtech.co.za</a></p>
-    <p>Phone: <a href="tel:+27613815929">+27 61 381 5929</a></p>
+  <h2>Locations</h2>
+  <ul>
+    <li>Johannesburg (HQ)</li>
+    <li>Pretoria Service Point</li>
+  </ul>
 
-    <h2>Locations</h2>
-    <ul><li>Johannesburg (HQ)</li><li>Pretoria Service Point</li></ul>
-    <p class="muted">Map embed will be added in Part 3.</p>
-  </main>
+  <div class="map-embed" aria-label="CloudTech Johannesburg HQ map">
+    <iframe
+      title="CloudTech Johannesburg HQ"
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3580.126240361931!2d28.031313575414906!3d-26.192571377083766!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e950b9300000001%3A0x335d35f228da3ccd!2sRosebank%20College%20%7C%20Braamfontein%20Campus!5e0!3m2!1sen!2sza!4v1763585901298!5m2!1sen!2sza"
+      width="100%"
+      height="300"
+      style="border:0;"
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
 
-  <footer><div class="container"><p>&copy; <span data-year></span> CloudTech</p></div></footer>
-  <script src="javascript/main.js"></script>
+  <h2>Send us a message</h2>
+  <form id="contactForm" data-validate-form novalidate>
+    <label for="contactName">Full Name*</label>
+    <input id="contactName" name="name" type="text" required data-validate>
+    <small class="field-error" data-error-for="contactName"></small>
+
+    <label for="contactEmail">Email*</label>
+    <input id="contactEmail" name="email" type="email" required data-validate>
+    <small class="field-error" data-error-for="contactEmail"></small>
+
+    <label for="contactSubject">Subject*</label>
+    <input id="contactSubject" name="subject" type="text" required data-validate minlength="3">
+    <small class="field-error" data-error-for="contactSubject"></small>
+
+    <label for="contactMessage">Message*</label>
+    <textarea id="contactMessage" name="message" rows="5" required data-validate minlength="10"></textarea>
+    <small class="field-error" data-error-for="contactMessage"></small>
+
+    <button class="btn" type="submit">Send Message</button>
+
+    <p class="form-feedback" data-form-feedback aria-live="polite"></p>
+  </form>
+</main>
+
+<footer><div class="container"><p>&copy; <span data-year></span> CloudTech</p></div></footer>
+<script src="javascript/main.js"></script>
 </body>
 </html>

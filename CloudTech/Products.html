@@ -5,8 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Products – CloudTech</title>
   <link rel="icon" href="Images/favicon.svg" type="image/svg+xml">
-<meta name="theme-color" content="#2563eb">
-
+  <meta name="theme-color" content="#2563eb">
   <meta name="description" content="Browse CloudTech products: phones, laptops and accessories.">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/style.css">
@@ -33,51 +32,77 @@
   </div>
 </header>
 
+<main class="container">
+  <h1>Products</h1>
 
+  <section aria-label="Filter products">
+    <label for="productSearch">Search products</label>
+    <input
+      id="productSearch"
+      type="search"
+      placeholder="Type to filter by name or category…"
+      data-product-search
+    >
+  </section>
 
-  <main class="container">
-    <h1>Products</h1>
-    <!-- Example static cards for Part 1; replace images/titles as needed -->
-    <div class="grid cards">
-      <article class="card">
-        <img class="resp-thumb"
-              src="Images/iphone_15_plus_black_pdp_image_position-1__wwen_5.jpg"
-              alt="iPhone 15 Plus in black, front and back"
-              width="1280" height="960"
-              sizes="(min-width:1024px) 33vw, (min-width:768px) 45vw, 100vw"
-              loading="lazy" decoding="async" />
-        <h2>CloudPhone X</h2>
-        <p class="muted">6.1″ OLED • 128 GB • 5G</p>
-        <a class="btn" href="Enquiry.html">Enquire</a>
-      </article>
+  <div class="grid cards">
+    <article class="card" data-product-card data-product-category="smartphone phone mobile">
+      <img class="resp-thumb"
+           src="Images/iphone_15_plus_black_pdp_image_position-1__wwen_5.jpg"
+           alt="iPhone 15 Plus in black, front and back"
+           width="1280" height="960"
+           sizes="(min-width:1024px) 33vw, (min-width:768px) 45vw, 100vw"
+           loading="lazy" decoding="async"
+           data-lightbox-trigger
+           data-caption="CloudPhone X – flagship smartphone">
+      <h2 data-product-name>CloudPhone X</h2>
+      <p class="muted">6.1″ OLED • 128 GB • 5G</p>
+      <a class="btn" href="Enquiry.html">Enquire</a>
+    </article>
 
-      <article class="card">
-        <img class="resp-thumb"
-              src="Images/macbook_air_13_in_m3_midnight_pdp_image_position_1__wwen_1_1_1.jpg"
-              alt="MacBook Air 13-inch in midnight"
-              width="1280" height="960"
-              sizes="(min-width:1024px) 33vw, (min-width:768px) 45vw, 100vw"
-              loading="lazy" decoding="async" />
-        <h2>CloudBook Air 13</h2>
-        <p class="muted">13.3″ • 16 GB • 512 GB SSD</p>
-        <a class="btn" href="Enquiry.html">Enquire</a>
-      </article>
+    <article class="card" data-product-card data-product-category="laptop notebook mac">
+      <img class="resp-thumb"
+           src="Images/macbook_air_13_in_m3_midnight_pdp_image_position_1__wwen_1_1_1.jpg"
+           alt="MacBook Air 13-inch in midnight"
+           width="1280" height="960"
+           sizes="(min-width:1024px) 33vw, (min-width:768px) 45vw, 100vw"
+           loading="lazy" decoding="async"
+           data-lightbox-trigger
+           data-caption="CloudBook Air 13 – lightweight laptop for study and work">
+      <h2 data-product-name>CloudBook Air 13</h2>
+      <p class="muted">13.3″ • 16 GB • 512 GB SSD</p>
+      <a class="btn" href="Enquiry.html">Enquire</a>
+    </article>
 
-      <article class="card">
-        <img class="resp-thumb"
-     src="Images/01.ls_jbl_junior_320bt_product_image_hero_blue_1_1_1.jpg"
-     alt="JBL Junior 320BT wireless headphones in blue"
-     width="1280" height="960"
-     sizes="(min-width:1024px) 33vw, (min-width:768px) 45vw, 100vw"
-     loading="lazy" decoding="async" />
-        <h2>CloudBuds Pro</h2>
-        <p class="muted">ANC • 24h playtime</p>
-        <a class="btn" href="Enquiry.html">Enquire</a>
-      </article>
-    </div>
-  </main>
+    <article class="card" data-product-card data-product-category="audio headphones accessory">
+      <img class="resp-thumb"
+           src="Images/01.ls_jbl_junior_320bt_product_image_hero_blue_1_1_1.jpg"
+           alt="JBL Junior 320BT wireless headphones in blue"
+           width="1280" height="960"
+           sizes="(min-width:1024px) 33vw, (min-width:768px) 45vw, 100vw"
+           loading="lazy" decoding="async"
+           data-lightbox-trigger
+           data-caption="CloudBuds Pro – wireless audio with ANC">
+      <h2 data-product-name>CloudBuds Pro</h2>
+      <p class="muted">ANC • 24h playtime</p>
+      <a class="btn" href="Enquiry.html">Enquire</a>
+    </article>
+  </div>
+</main>
 
-  <footer><div class="container"><p>&copy; <span data-year></span> CloudTech</p></div></footer>
-  <script src="javascript/main.js"></script>
+<!-- Lightbox overlay -->
+<div class="lightbox-overlay" data-lightbox hidden aria-modal="true" role="dialog" aria-label="Product image preview">
+  <div class="lightbox-backdrop" data-lightbox-close></div>
+  <figure class="lightbox-content">
+    <img src="" alt="" data-lightbox-image>
+    <figcaption data-lightbox-caption></figcaption>
+    <button type="button" class="lightbox-close" data-lightbox-close aria-label="Close image preview">
+      &times;
+    </button>
+  </figure>
+</div>
+
+<footer><div class="container"><p>&copy; <span data-year></span> CloudTech</p></div></footer>
+<script src="javascript/main.js"></script>
 </body>
 </html>

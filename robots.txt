@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /Docs/
+Disallow: /screenshots/
+
+Sitemap: https://cloudtech.example/sitemap.xml
